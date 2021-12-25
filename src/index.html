@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<:import src="/.kit/bootstrap/all.htm"/>
+		<:import src="/.kit/bootstrap/extras/ace-editor.htm"/>
+		<style>
+			.app-editor {
+				padding-left: .7em;
+				border-left: 5px solid #ddd;
+				min-height: 6em;
+			}
+			.ace-editor {
+				min-height: 6em;
+			}
+		</style>
+	</head>
+	<body>
+		<bs-page>
+			<bs-navbar :dark=[[true]] :size="md" :breakpoint="sm" :selection=[[3]]>
+				<span :slot="brand">&nbsp;Aremel</span>
+				<bs-nav-item :text="Home"/>
+				<bs-nav-item :text="Quick start"/>
+				<bs-nav-item :text="Docs"/>
+				<bs-nav-item :text="Playground"/>
+			</bs-navbar>
+			<p/>
+
+			<bs-container :size="md" :data=[[ [{
+				"code": "println()\nprintln()"
+			}] ]] :dataLength=[[1]]>
+				<bs-row>
+					<bs-col :size="sm-8">
+						<bs-dropdown :size="md" :label="Seconds counter " :type="primary" :outline=[[true]]>
+							<bs-dropdown-item :label="Simple component"/>
+							<bs-dropdown-item :label="Seconds counter"/>
+						</bs-dropdown>
+						<p/>
+						<ace-editor class="app-editor">[[data.code]]</ace-editor>
+						<p/>
+					</bs-col>
+					<bs-col :size="sm">
+						<bs-button :size="md" :disabled=[[true]]>Refresh</bs-button>
+						<p/>
+						<div class="app-editor">
+							sdfsf
+						</div>
+						<p/>
+					</bs-col>
+				</bs-row>
+			</bs-container>	
+		</bs-page>
+	</body>
+</html>
