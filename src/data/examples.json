@@ -1,0 +1,12 @@
+{
+	"examples": [
+		{
+			"name": "Simple component",
+			"file": "1-simple-component.txt"
+		},
+		{
+			"name": "Seconds counter",
+			"file": "2-seconds-counter.txt"
+		}
+	]
+}

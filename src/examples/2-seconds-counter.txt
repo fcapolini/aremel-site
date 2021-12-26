@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <:define tag="seconds-counter"
+             :count=[[0]]
+             :on-count=[[setTimeout(() => count++, 1000)]]>
+      Seconds: [[count]]
+    </:define>
+
+    <seconds-counter/>
+  </body>
+</html>

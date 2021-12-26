@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <:define tag="hello-message" :name="">
+      Hello [[name]]
+    </:define>
+
+    <hello-nessage :name="Taylor"/>
+  </body>
+</html>
