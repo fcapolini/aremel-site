@@ -1,0 +1,55 @@
+<lib :k_bs_dark="#404080">
+    <:import src="/.kit/bootstrap/all.htm"/>
+    <:import src="/.kit/bootstrap/extras/ace-editor.htm"/>
+    <:import src="page.htm"/>
+    <style>
+        .btn {
+            font-size: 92%;
+        }
+        .dropdown-menu {
+            font-size: 95%;
+        }
+        .navbar {
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+        }
+        .playground-iframe {
+            width: 100%;
+            min-height: 100%;
+        }
+        .ace-editor {
+            font-size: 80%;
+            min-height: 6em;
+        }
+        .playground-col {
+            display: flex;
+            flex-direction: column;
+        }
+        .playground-col-content {
+            flex: 1;
+            padding-left: .7em;
+            border-left: 5px solid #ddd;
+            min-height: 6em;
+        }
+        .playground-message {
+            display: none;
+            font-size: .85em;
+            opacity: .5;
+            margin-left: .5em;
+        }
+        .ace_gutter {
+            width: 20px !important;
+            background: white !important;
+        }
+        .ace_gutter > .ace_layer {
+            background: white !important;
+            margin-left: -20px;
+        }
+        .ace_scroller {
+            left: 20px !important;
+        }
+        .ace_tooltip {
+            display: none !important;
+        }
+    </style>
+</lib>

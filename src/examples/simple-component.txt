@@ -5,6 +5,6 @@
       Hello [[name]]
     </:define>
 
-    <hello-nessage :name="Taylor"/>
+    <hello-message :name="Taylor"/>
   </body>
 </html>

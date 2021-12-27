@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<:import src="parts/head.htm"/>
+	</head>
+	<body>
+		<site-page :pageIndex=[[3]]>
+			<bs-container :size="md" :data=[[examplesData.content]]>
+				<:data-source :aka="examplesData" :url="/site/data/examples.json"/>
+
+				<bs-row>
+					<bs-col :aka="col1" :size="sm-8" :class-playgroundCol=[[true]]>
+						<p/>
+						<div :aka="header">
+							<bs-dropdown :aka="dropdown" :size="md" :type="primary" :outline=[[true]]
+									:label="[[name]] "
+									:name=[[data.examples[0].name]]>
+								<bs-dropdown-item :data=[[data.examples]] :label=[[data.name]]
+										:active=[[label === dropdown.name]]
+										:file=[[data.file]]
+										:event-click=[[() => {
+											dropdown.name = label;
+											sourceData.file = file;
+										}]]/>
+							</bs-dropdown>
+							<!---FIXME: :hidden=[[!input.editor.hasFocus]] doesn't work? -->
+							<span :aka="message" class="playground-message">([[pageCommandKey]]-S to refresh)</span>
+						</div>
+
+						<:data-source :aka="sourceData" :type="text/plain" :autoGet=[[false]]
+								:url="/site/examples/[[file]]"
+								:file=[[data.examples[0].file]]
+								:on-file=[[file ? doRequest(null) : null]]
+								:on-content=[[
+									input.editor.setValue(content);
+									col2.pageData.compile(content);
+								]]/>
+						
+						<p/>
+						<div :aka="input" class="playground-col-content">
+							<ace-editor :aka="editor" :showGutter=[[true]] :showFoldWidgets=[[true]]
+									:on-hasFocus=[[
+										col1.header.message.__dom.style.display = (hasFocus ? 'inline' : null);
+									]]
+									:init=[[
+										addCommand({
+											name: 'Save',
+											bindKey: {win: 'Ctrl-S',  mac: 'Command-S'},
+											exec: function(editor) {
+												col2.pageData.content = undefined;
+												col2.pageData.compile(getValue());
+											}
+										})
+									]]/>
+						</div>
+					</bs-col>
+
+					<bs-col :aka="col2" :size="sm" :class-playgroundCol=[[true]]>
+						<p/>
+						<span>
+							<bs-button :size="md"
+									:event-click=[[(_) => {
+										var s = col1.input.editor.getValue();
+										pageData.content = undefined;
+										pageData.compile(s);
+									}]]>
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+									<path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
+									<path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
+								</svg>
+							</bs-button>
+						</span>
+
+						<:data-source :aka="pageData" :type="text/plain" :autoGet=[[false]]
+								:url="/playground-compiler"
+								:post=[[true]]
+								:compile=[[(s) => {
+									doRequest({source:s});
+									output.iframe.__dom.style.opacity = 0;
+								}]]
+								:on-content=[[
+									if (content) {
+										var iframe = output.iframe.__dom;
+										var doc = iframe.contentWindow.document;
+										doc.open();
+										doc.write(content);
+										doc.close();
+										setTimeout(() => {
+											doc.body.style.fontFamily = window.getComputedStyle(document.body).fontFamily;
+											doc.body.style.lineHeight = window.getComputedStyle(document.body).lineHeight;
+											doc.body.style.margin = 0;
+											iframe.style.opacity = 1;
+										}, 0);
+									}
+								]]/>
+						
+						<p/>
+						<div :aka="output" class="playground-col-content">
+							<iframe :aka="iframe" class="playground-iframe" sandbox="allow-scripts allow-same-origin"/>
+						</div>
+					</bs-col>
+				</bs-row>
+			</bs-container>	
+		</site-page>
+	</body>
+</html>
