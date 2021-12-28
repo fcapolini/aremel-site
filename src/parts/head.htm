@@ -1,6 +1,7 @@
 <lib :k_bs_dark="#404080">
     <:import src="/.kit/bootstrap/all.htm"/>
     <:import src="/.kit/bootstrap/extras/ace-editor.htm"/>
+    <:import src="/.kit/bootstrap/extras/showdown-div.htm"/>
     <:import src="page.htm"/>
     <style>
         .btn {
@@ -18,7 +19,7 @@
             min-height: 100%;
         }
         .ace-editor {
-            font-size: 80%;
+            font-size: 85%;
             min-height: 6em;
         }
         .playground-col {
@@ -48,8 +49,16 @@
         .ace_scroller {
             left: 20px !important;
         }
-        .ace_tooltip {
+        .ace_tooltip, .ace_mobile-button {
             display: none !important;
+        }
+        .vspacing {
+            display: none;
+        }
+        @media (min-width: 768px) {
+            .vspacing {
+                display: block;
+            }
         }
     </style>
 </lib>

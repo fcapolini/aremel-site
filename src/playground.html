@@ -3,11 +3,14 @@
 	<head>
 		<:import src="parts/head.htm"/>
 	</head>
+
 	<body>
 		<site-page :pageIndex=[[3]]>
 			<bs-container :size="md" :data=[[examplesData.content]]>
 				<:data-source :aka="examplesData" :url="/site/data/examples.json"/>
 
+				<!-- <br class="vspacing"/> -->
+				<p/>
 				<bs-row>
 					<bs-col :aka="col1" :size="sm-8" :class-playgroundCol=[[true]]>
 						<p/>
@@ -17,10 +20,14 @@
 									:name=[[data.examples[0].name]]>
 								<bs-dropdown-item :data=[[data.examples]] :label=[[data.name]]
 										:active=[[label === dropdown.name]]
-										:file=[[data.file]]
+										:sourceFile=[[data.file]]
+										:markdownFile1=[[data.text1]]
+										:markdownFile2=[[data.text2]]
 										:event-click=[[() => {
 											dropdown.name = label;
-											sourceData.file = file;
+											sourceData.file = sourceFile;
+											row2.col1.markdownData.file = markdownFile1 ? markdownFile1 : '_empty.md';
+											row2.col2.markdownData.file = markdownFile2 ? markdownFile2 : '_empty.md';
 										}]]/>
 							</bs-dropdown>
 							<!---FIXME: :hidden=[[!input.editor.hasFocus]] doesn't work? -->
@@ -98,6 +105,32 @@
 						<div :aka="output" class="playground-col-content">
 							<iframe :aka="iframe" class="playground-iframe" sandbox="allow-scripts allow-same-origin"/>
 						</div>
+					</bs-col>
+				</bs-row>
+
+				<!-- <br class="vspacing"/> -->
+				<p/>
+				<bs-row :aka="row2">
+					<bs-col :aka="col1" :size="md-6">
+						<p/>
+						<:data-source :aka="markdownData" :type="text/plain" :autoGet=[[true]]
+								:file=[[data.examples[0].text1]]
+								:on-file=[[console.log('markdownData.file: ' + file)]]
+								:url=[[file ? '/site/examples/'+file : null]]
+								:on-content=[[content != null ? markdown.text = content : null]]
+						/>
+						<showdown-div :aka="markdown" :text=""/>
+					</bs-col>
+
+					<bs-col :aka="col2" :size="md-6">
+						<p/>
+						<:data-source :aka="markdownData" :type="text/plain" :autoGet=[[true]]
+								:file=[[data.examples[0].text2]]
+								:on-file=[[console.log('markdownData.file: ' + file)]]
+								:url=[[file ? '/site/examples/'+file : null]]
+								:on-content=[[content != null ? markdown.text = content : null]]
+						/>
+						<showdown-div :aka="markdown" :text=""/>
 					</bs-col>
 				</bs-row>
 			</bs-container>	

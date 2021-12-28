@@ -1,16 +1,34 @@
 {
 	"examples": [
 		{
-			"name": "Simple component",
-			"file": "simple-component.txt"
+			"name": "Augmented HTML",
+			"file": "augmented-html.txt",
+			"text1": "augmented-html-a.md",
+			"text2": "augmented-html-b.md"
 		},
 		{
-			"name": "Seconds counter",
-			"file": "seconds-counter.txt"
+			"name": "Reusability",
+			"file": "reusability.txt",
+			"text1": "reusability-a.md",
+			"text2": "reusability-b.md"
+		},
+		{
+			"name": "Reactivity",
+			"file": "reactivity.txt",
+			"text1": "reactivity-a.md",
+			"text2": "reactivity-b.md"
+		},
+		{
+			"name": "Isomorphism",
+			"file": "isomorphism.txt",
+			"text1": "isomorphism-a.md",
+			"text2": "isomorphism-b.md"
 		},
 		{
 			"name": "Bootstrap kit examples",
-			"file": "bootstrap-kit-examples.txt"
+			"file": "bootstrap-kit-examples.txt",
+			"text1": "bootstrap-kit-examples-a.md",
+			"text2": "bootstrap-kit-examples-b.md"
 		}
 	]
 }
