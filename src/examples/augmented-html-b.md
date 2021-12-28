@@ -2,7 +2,7 @@
 
 The Aremel server includes:
 
-**A preprocessor** with support for *inclusion* and *macro processing*.
+**A preprocessor** with support for *source inclusion* and *macro processing*.
 
 **A compiler** that generates page-specific reactive JavaScript code.
 

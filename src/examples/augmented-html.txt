@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html>
-  <head>
-  </head>
-  <body>
-    2 + 3 = [[2 + 3]]
+  <body :value=[[1]]>
+    <button :event-click=[[() => value--]]>
+      -
+    </button>
+    [[value]]
+    <button :event-click=[[() => value++]]>
+      +
+    </button>
   </body>
 </html>
