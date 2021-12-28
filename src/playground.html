@@ -37,14 +37,16 @@
 						<:data-source :aka="sourceData" :type="text/plain" :autoGet=[[false]]
 								:url="/site/examples/[[file]]"
 								:file=[[data.examples[0].file]]
-								:on-file=[[file ? doRequest(null) : null]]
+								:on-file=[[if (file) {input.visible = false; doRequest(null);}]]
 								:on-content=[[
 									input.editor.setValue(content);
+									setTimeout(() => input.visible = true, 0);
 									col2.pageData.compile(content);
 								]]/>
 						
 						<p/>
-						<div :aka="input" class="playground-col-content">
+						<div :aka="input" class="playground-col-content[[visible && __rt.page.isClient ? ' visible' :'']]"
+								:visible=[[false]]>
 							<ace-editor :aka="editor" :showGutter=[[true]] :showFoldWidgets=[[true]]
 									:on-hasFocus=[[
 										col1.header.message.__dom.style.display = (hasFocus ? 'inline' : null);
@@ -82,8 +84,8 @@
 								:url="/playground-compiler"
 								:post=[[true]]
 								:compile=[[(s) => {
+									output.visible = false;
 									doRequest({source:s});
-									output.iframe.__dom.style.opacity = 0;
 								}]]
 								:on-content=[[
 									if (content) {
@@ -96,14 +98,16 @@
 											doc.body.style.fontFamily = window.getComputedStyle(document.body).fontFamily;
 											doc.body.style.lineHeight = window.getComputedStyle(document.body).lineHeight;
 											doc.body.style.margin = 0;
-											iframe.style.opacity = 1;
+											output.visible = true;
 										}, 0);
 									}
 								]]/>
 						
 						<p/>
-						<div :aka="output" class="playground-col-content">
-							<iframe :aka="iframe" class="playground-iframe" sandbox="allow-scripts allow-same-origin"/>
+						<div :aka="output" class="playground-col-content[[visible && __rt.page.isClient ? ' visible' :'']]"
+								:visible=[[false]]>
+							<iframe :aka="iframe" class="playground-iframe"
+									sandbox="allow-scripts allow-same-origin"/>
 						</div>
 					</bs-col>
 				</bs-row>

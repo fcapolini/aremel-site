@@ -32,6 +32,13 @@
             border-left: 5px solid #ddd;
             min-height: 6em;
         }
+        .playground-col-content > * {
+            opacity: 0;
+        }
+        .playground-col-content.visible > * {
+            opacity: 1;
+            transition: opacity .1s ease-in;
+        }
         .playground-message {
             display: none;
             font-size: .85em;
