@@ -4,6 +4,6 @@ This examples defines a custom tag named `app-product`.
 
 It then uses it three times with different values.
 
-Aremel makes it as convenient as possible to apply the [DRY principle](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) to HTML authoring.
+Aremel makes it convenient to apply the [DRY principle](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) to HTML authoring.
 
 Custom tags can be easily turned into full-blown components and stored in external source files, usually organized as [Kits](#).

@@ -1,0 +1,7 @@
+<!DOCTYPE html>
+<html>
+  <body :count=[[0]]
+        :on-count=[[setTimeout(() => count++, 1000)]]>
+    Isomorphic counter: [[count]]
+  </body>
+</html>
