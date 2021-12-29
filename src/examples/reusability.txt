@@ -4,7 +4,7 @@
     <:define tag="app-product" :name :price>
       <b>Product: [[name]]</b>
       <div>Price: [[price]]</div>
-      <br/>
+      <p/>
     </:define>
 
     <app-product :name="Thingy" :price="1$"/>

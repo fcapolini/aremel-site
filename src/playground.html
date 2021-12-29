@@ -119,7 +119,6 @@
 						<p/>
 						<:data-source :aka="markdownData" :type="text/plain" :autoGet=[[true]]
 								:file=[[data.examples[0].text1]]
-								:on-file=[[console.log('markdownData.file: ' + file)]]
 								:url=[[file ? '/site/examples/'+file : null]]
 								:on-content=[[content != null ? markdown.text = content : null]]
 						/>
@@ -130,7 +129,6 @@
 						<p/>
 						<:data-source :aka="markdownData" :type="text/plain" :autoGet=[[true]]
 								:file=[[data.examples[0].text2]]
-								:on-file=[[console.log('markdownData.file: ' + file)]]
 								:url=[[file ? '/site/examples/'+file : null]]
 								:on-content=[[content != null ? markdown.text = content : null]]
 						/>
