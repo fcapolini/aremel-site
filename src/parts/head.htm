@@ -1,12 +1,23 @@
 <lib :k_bs_dark="#404080">
     <:import src="/.kit/bootstrap/all.htm"/>
     <:import src="/.kit/bootstrap/extras/ace-editor.htm"/>
-    <:import src="/.kit/bootstrap/extras/showdown-div.htm"/>
+    <:import src="/.kit/bootstrap/extras/markdown-div.htm"/>
     <:import src="page.htm"/>
     <style>
         .navbar {
             padding-top: 0.75rem;
             padding-bottom: 0.75rem;
+        }
+        .willfadein {
+            opacity: 0;
+        }
+        .willfadein.fadein1 {
+            opacity: 1;
+            transition: opacity .25s ease-in;
+        }
+        .willfadein.fadein2 {
+            opacity: 1;
+            transition: opacity .05s ease-in;
         }
         .playground-iframe {
             width: 100%;

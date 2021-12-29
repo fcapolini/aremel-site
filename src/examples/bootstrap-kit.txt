@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <:import src="/.kit/bootstrap/all.htm"/>
+  </head>
+  <body>
+    <bs-page>
+      <bs-accordion :flush=[[false]]>
+        <bs-accordion-item :header="Bootstrap...">
+          Aremel's Bootstrap Kit wraps everything
+          needed by Bootstrap projects and defines
+          easy-to-use custom tags.
+        </bs-accordion-item>
+        <bs-accordion-item :header="...made easy">
+          You won't need to remember all those
+          pesky details and your code will be
+          much easier to read and maintain.
+        </bs-accordion-item>
+      </bs-accordion>
+    </bs-page>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <:import src="/.kit/bootstrap/all.htm"/>
+  </head>
+	<body>
+		<:data-source :aka="sampleData" :url="/data.json"/>
+		<bs-list :data=[[sampleData.content]]>
+			<bs-item :data=[[data.list]]>item [[data]]</bs-item>
+		</bs-list>
+	</body>
+</html>

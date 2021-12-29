@@ -25,10 +25,22 @@
 			"text2": "isomorphism-b.md"
 		},
 		{
-			"name": "Bootstrap kit examples",
-			"file": "bootstrap-kit-examples.txt",
-			"text1": "bootstrap-kit-examples-a.md",
-			"text2": "bootstrap-kit-examples-b.md"
+			"name": "Bootstrap Kit",
+			"file": "bootstrap-kit.txt",
+			"text1": "bootstrap-kit-a.md",
+			"text2": "bootstrap-kit-b.md"
+		},
+		{
+			"name": "Data binding",
+			"file": "data-binding.txt",
+			"text1": "data-binding-a.md",
+			"text2": "data-binding-b.md"
+		},
+		{
+			"name": "Markdown",
+			"file": "markdown.txt",
+			"text1": "markdown-a.md",
+			"text2": "markdown-b.md"
 		}
 	]
 }

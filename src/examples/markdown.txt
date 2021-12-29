@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <:import src="/.kit/bootstrap/extras/markdown-div.htm"/>
+  </head>
+  <body>
+    <:data-source :aka="mdData" :type="text/plain" :url="/sample.md"/>
+    <markdown-div :text=[[mdData.content]]/>
+  </body>
+</html>

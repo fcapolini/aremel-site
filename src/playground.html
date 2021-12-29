@@ -11,7 +11,7 @@
 
 				<!-- <br class="vspacing"/> -->
 				<p/>
-				<bs-row>
+				<bs-row :aka="row1" :class-willfadein=[[true]] :class-fadein1=[[false]]>
 					<bs-col :aka="col1" :size="sm-8" :class-playgroundCol=[[true]]>
 						<p/>
 						<div :aka="header">
@@ -39,6 +39,7 @@
 								:file=[[data.examples[0].file]]
 								:on-file=[[if (file) {input.visible = false; doRequest(null);}]]
 								:on-content=[[
+									setTimeout(() => row1.class_fadein1 = true, 100);
 									input.editor.setValue(content);
 									setTimeout(() => input.visible = true, 0);
 									col2.pageData.compile(content);
@@ -94,12 +95,19 @@
 										doc.open();
 										doc.write(content);
 										doc.close();
-										setTimeout(() => {
-											doc.body.style.fontFamily = window.getComputedStyle(document.body).fontFamily;
-											doc.body.style.lineHeight = window.getComputedStyle(document.body).lineHeight;
-											doc.body.style.margin = 0;
-											output.visible = true;
-										}, 0);
+										//console.write(content);
+										function f() {
+											if (doc) {
+												output.visible = true;
+												//console.log(doc.body);//tempdebug
+												doc.body.style.fontFamily = window.getComputedStyle(document.body).fontFamily;
+												doc.body.style.lineHeight = window.getComputedStyle(document.body).lineHeight;
+												doc.body.style.margin = 0;
+											} else {
+												setTimeout(f, 100);
+											}
+										}
+										setTimeout(f, 100);
 									}
 								]]/>
 						
@@ -114,15 +122,18 @@
 
 				<!-- <br class="vspacing"/> -->
 				<p/>
-				<bs-row :aka="row2">
+				<bs-row :aka="row2" :class-willfadein=[[true]] :class-fadein2=[[true]]>
 					<bs-col :aka="col1" :size="md-6">
 						<p/>
 						<:data-source :aka="markdownData" :type="text/plain" :autoGet=[[true]]
 								:file=[[data.examples[0].text1]]
 								:url=[[file ? '/site/examples/'+file : null]]
-								:on-content=[[content != null ? markdown.text = content : null]]
+								:on-content=[[
+									setTimeout(() => row2.class_fadein2 = true, 10);
+									content != null ? markdown.text = content : null;
+								]]
 						/>
-						<showdown-div :aka="markdown" :text=""/>
+						<markdown-div :aka="markdown" :text=""/>
 					</bs-col>
 
 					<bs-col :aka="col2" :size="md-6">
@@ -132,7 +143,7 @@
 								:url=[[file ? '/site/examples/'+file : null]]
 								:on-content=[[content != null ? markdown.text = content : null]]
 						/>
-						<showdown-div :aka="markdown" :text=""/>
+						<markdown-div :aka="markdown" :text=""/>
 					</bs-col>
 				</bs-row>
 			</bs-container>	

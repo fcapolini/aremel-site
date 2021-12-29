@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <:import src="/.kit/bootstrap/all.htm"/>
+  </head>
+  <body>
+    <:data-source :aka="listData"
+        :url="/site/examples/list.json"/>
+    <bs-page>
+      <bs-list>
+        <bs-item :data=[[listData.content.list]]>
+          [[data.title]]
+        </bs-item>
+      </bs-list>
+    </bs-page>
+  </body>
+</html>
