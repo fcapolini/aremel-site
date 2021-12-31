@@ -9,7 +9,7 @@
     <bs-list>
       <bs-item :data=[[sampleData.content.list]]
                :badge=[[data.count]]>
-        [[data]]
+        [[data.name]]
       </bs-item>
     </bs-list>
   </body>

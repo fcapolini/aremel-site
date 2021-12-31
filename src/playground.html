@@ -9,7 +9,6 @@
 			<bs-container :size="md" :data=[[examplesData.content]]>
 				<:data-source :aka="examplesData" :url="/site/data/examples.json"/>
 
-				<!-- <br class="vspacing"/> -->
 				<p/>
 				<bs-row :aka="row1" :class-willfadein=[[true]] :class-fadein1=[[false]]>
 					<bs-col :aka="col1" :size="sm-8" :class-playgroundCol=[[true]]>
@@ -95,11 +94,9 @@
 										doc.open();
 										doc.write(content);
 										doc.close();
-										//console.write(content);
 										function f() {
 											if (doc) {
 												output.visible = true;
-												//console.log(doc.body);//tempdebug
 												doc.body.style.fontFamily = window.getComputedStyle(document.body).fontFamily;
 												doc.body.style.lineHeight = window.getComputedStyle(document.body).lineHeight;
 												doc.body.style.margin = 0;
@@ -120,7 +117,6 @@
 					</bs-col>
 				</bs-row>
 
-				<!-- <br class="vspacing"/> -->
 				<p/>
 				<bs-row :aka="row2" :class-willfadein=[[true]] :class-fadein2=[[true]]>
 					<bs-col :aka="col1" :size="md-6">
