@@ -1,6 +1,6 @@
 #### Reusability
 
-This examples defines a custom tag named `app-product`.
+This example defines a custom tag named `app-product`.
 
 It then uses it three times with different values.
 

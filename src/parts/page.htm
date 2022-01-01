@@ -1,14 +1,14 @@
 <lib>
     <:define tag="site-page:bs-page" :pageIndex=[[0]]>
         <bs-navbar :dark=[[true]] :size="md" :breakpoint="sm"
-                :brandLink="index.html"
+                :brandLink="index"
                 :selection=[[pageIndex]]>
             <span :slot="brand">&nbsp;Aremel</span>
 
-            <bs-nav-item :text="Home" :link="index.html"/>
+            <bs-nav-item :text="Home" :link="index"/>
             <bs-nav-item :text="Quick start"/>
             <bs-nav-item :text="Docs"/>
-            <bs-nav-item :text="Playground" :link="playground.html"/>
+            <bs-nav-item :text="Playground" :link="playground"/>
 
             <a :slot="extra" href="https://github.com/fcapolini/aremel"
                     style="color:white;padding-right:.2em">

@@ -1,6 +1,14 @@
 #### Data binding
 
-This example loads a static JSON file and creates a list using its contents.
+This example loads a static JSON file and creates a list using its contents, specifically:
 
-Thanks to isomorphism, the output page is content ready and can be indexed by search engines, but can still be dynamically updated in the client as needed.
+```json
+{"list":[
+    {"name":"Inbox", "count":3},
+    {"name":"Drafts", "count":null},
+    {"name":"Sent", "count":null},
+    {"name":"Junk", "count":1}
+]}
+```
 
+An initial data request is done in the server so the output page is content-ready. It can then be repeated in the client if needed to fetch updated data.

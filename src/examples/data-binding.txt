@@ -4,10 +4,10 @@
     <:import src="/.kit/bootstrap/all.htm"/>
   </head>
   <body>
-    <:data-source :aka="sampleData"
+    <:data-source :aka="listData"
                   :url="/data.json"/>
     <bs-list>
-      <bs-item :data=[[sampleData.content.list]]
+      <bs-item :data=[[listData.content.list]]
                :badge=[[data.count]]>
         [[data.name]]
       </bs-item>

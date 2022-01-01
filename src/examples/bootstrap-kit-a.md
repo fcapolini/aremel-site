@@ -6,5 +6,4 @@ By importing the kit in the `<head>` tag, all needed resources are automatically
 
 The kit defines a set of custom tags that implement Bootstrap components and hide all relevant implementation details.
 
-You can compare it with an [original example](https://getbootstrap.com/docs/5.1/components/accordion/#example).
-
+You can compare it to an [original example](https://getbootstrap.com/docs/5.1/components/accordion/#example).
