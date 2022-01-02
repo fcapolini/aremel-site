@@ -4,7 +4,17 @@
         <bs-navbar :dark=[[true]] :size="md" :breakpoint="sm"
                 :brandLink="index"
                 :selection=[[pageIndex]]>
-            <span :slot="brand">&nbsp;Aremel</span>
+            <span :slot="brand">
+                <svg style="margin-left:.1em;vertical-align:-20%" width="30" viewBox="0 0 179 151" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M164.055 76.9649L124.985 116.035" stroke="white" stroke-width="19" stroke-linecap="round"/>
+                    <path d="M98.8742 139.377L137.912 128.917L109.334 100.339L98.8742 139.377ZM150.651 82.6504L118.673 114.628L123.623 119.578L155.601 87.6001L150.651 82.6504Z" fill="white"/>
+                    <path d="M162.502 75.5021L113 23" stroke="white" stroke-width="19" stroke-linecap="round"/>
+                    <path d="M17.1552 76.5332L59.8448 33.8436" stroke="white" stroke-width="19" stroke-linecap="round"/>
+                    <path d="M81.1658 13L42.1284 23.46L70.7058 52.0374L81.1658 13ZM29.389 69.7265L61.3668 37.7487L56.4171 32.799L24.4393 64.7768L29.389 69.7265Z" fill="white"/>
+                    <path d="M17.5379 76.8748L67.04 129.377" stroke="white" stroke-width="19" stroke-linecap="round"/>
+                </svg>
+                Aremel
+            </span>
 
             <bs-nav-item :text="Home" :link="index"/>
             <bs-nav-item :text="Quick start"/>
