@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <body>
-    2 + 3 = [[2 + 3]]
+  <body :v=[[2]]>
+    2 + [[v]] = [[2 + v]]
   </body>
 </html>
