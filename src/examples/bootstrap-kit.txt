@@ -5,7 +5,7 @@
   </head>
   <body>
     <bs-page>
-      <bs-accordion :flush=[[false]]>
+      <bs-accordion :selection=[[-1]]>
         <bs-accordion-item :header="Bootstrap...">
           Aremel's Bootstrap Kit wraps everything
           needed by Bootstrap projects.

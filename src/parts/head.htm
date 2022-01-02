@@ -1,4 +1,9 @@
 <lib :k_bs_dark="#404080">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="apple-touch-icon" sizes="180x180" href="/site/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/site/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/site/favicon-16x16.png">
+    <link rel="manifest" href="/site/site.webmanifest">
     <:import src="/.kit/bootstrap/all.htm"/>
     <:import src="/.kit/bootstrap/extras/ace-editor.htm"/>
     <:import src="/.kit/bootstrap/extras/highlight-div.htm"/>
@@ -69,5 +74,19 @@
             background-color: #f8f8f8;
             border-top: 1px solid #f0f0f0;
         }
+        @media (max-width: 480px) {
+            .app-VSPACER {
+                display: none;
+            }
+        }
+        @media (max-width: 575px) {
+            .app-vspacer > br:first-child {
+                display: none;
+            }
+        }
     </style>
+    <:define tag="app-vspacer" class="app-vspacer">
+        <br/>
+        <br/>
+    </:define>
 </lib>

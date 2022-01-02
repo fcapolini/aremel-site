@@ -11,11 +11,11 @@
 				<bs-row>
 					<bs-col>
 						<br/>
-						<br/>
-						<br/>
+						<app-vspacer/>
 
-						<h1>
-							<svg style="margin-left:-.5em;vertical-align:-15%" width="45" viewBox="0 0 179 151" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<h1 style="letter-spacing:.02rem;">
+							<span style="display:flex;place-content: center;gap: 0.2em;">
+							<svg style="margin-left:-.5em;" width="45" viewBox="0 0 179 151" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M164.055 76.9649L124.985 116.035" stroke="black" stroke-width="19" stroke-linecap="round"/>
 								<path d="M98.8742 139.377L137.912 128.917L109.334 100.339L98.8742 139.377ZM150.651 82.6504L118.673 114.628L123.623 119.578L155.601 87.6001L150.651 82.6504Z" fill="black"/>
 								<path d="M162.502 75.5021L113 23" stroke="black" stroke-width="19" stroke-linecap="round"/>
@@ -23,26 +23,29 @@
 								<path d="M81.1658 13L42.1284 23.46L70.7058 52.0374L81.1658 13ZM29.389 69.7265L61.3668 37.7487L56.4171 32.799L24.4393 64.7768L29.389 69.7265Z" fill="black"/>
 								<path d="M17.5379 76.8748L67.04 129.377" stroke="black" stroke-width="19" stroke-linecap="round"/>
 							</svg>
-							Aremel
+							<span>Aremel</span>
+							</span>
 						</h1>
-						<markdown-div style="font-size:140%;margin:0 1.5em" :text='a groundbreaking
+						<!--- <markdown-div style="font-size:140%;margin:0 1.5em" :text='no-nonsense modern web development'/> -->
+						<!--- <p style="font-size:140%;opacity:.7">
+							❝ takes out the silliness of modern web development ❞
+						</p>-->
+						<app-vspacer/>
+						<markdown-div style="font-size:140%;margin:0 1.5em;" :text='A groundbreaking
 							[Node.js](https://nodejs.dev)/[Express](http://expressjs.com)
 							web framework that adds *reusability*, *reactivity* and *isomorphism*
-							to plain HTML'/>
+							to plain HTML.'/>
 						<!---<markdown-div style="font-size:140%;margin:0 1.5em" :text=
 '# Aremel
 
 no-nonsense modern web development'/>-->
 						<p/>
-						<br/>
-						<br/>
+						<app-vspacer/>
 						<bs-alert :type="light" style="display:inline-block;line-height:1.5em;margin:0 1.5em;font-size:110%;color:#664;border:0px solid rgba(0,0,0,.15);padding:.66em 1.1em">
 							<span style="font-size:150%;vertical-align:-15%;">👉</span>&nbsp;&nbsp;Aremel is in <a href="https://github.com/fcapolini/aremel">active development</a> and will be published via npm
 						</bs-alert>
+						<app-vspacer/>
 						<br/>
-						<br/>
-						<br/>
-						<p/>
 					</bs-col>
 				</bs-row>
 			</bs-container>
