@@ -15,7 +15,7 @@
 						<br/>
 
 						<h1>
-							<svg style="margin-left:-.5em;vertical-align:-20%" width="45" viewBox="0 0 179 151" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<svg style="margin-left:-.5em;vertical-align:-15%" width="45" viewBox="0 0 179 151" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M164.055 76.9649L124.985 116.035" stroke="black" stroke-width="19" stroke-linecap="round"/>
 								<path d="M98.8742 139.377L137.912 128.917L109.334 100.339L98.8742 139.377ZM150.651 82.6504L118.673 114.628L123.623 119.578L155.601 87.6001L150.651 82.6504Z" fill="black"/>
 								<path d="M162.502 75.5021L113 23" stroke="black" stroke-width="19" stroke-linecap="round"/>
@@ -49,8 +49,9 @@ no-nonsense modern web development'/>-->
 			</div>
 
 			<div :aka="playgroundStart" style="margin-top:1px;margin-bottom:-1px"/>
-			<div>
-				<app-playground/>
+			<div style="min-height: 100vh;display:flex;flex-direction:column;">
+				<app-playground style="flex:1"/>
+				<app-footer/>
 			</div>
 		</site-page>
 	</body>

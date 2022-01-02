@@ -1,27 +1,34 @@
 <lib>
-    <:define tag="app-footer" class="container">
-        <footer class="row row-cols-5 py-5 my-5 border-top">
-          <div class="col">
-            <a href="/" class="d-flex align-items-center mb-3 link-dark text-decoration-none">
-              <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-            </a>
-            <p class="text-muted">© 2021<br/>Fabrizio Capolini</p>
-          </div>
+    <:define tag="app-footer" class="app-footer">
+      <bs-container>
+        <footer class="row">
+          <bs-col>
+            <p>&nbsp;</p>
+            <h6>
+              <svg style="margin-left:-.5em;vertical-align:-20%" width="25" viewBox="0 0 179 151" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M164.055 76.9649L124.985 116.035" stroke="black" stroke-width="19" stroke-linecap="round"/>
+                <path d="M98.8742 139.377L137.912 128.917L109.334 100.339L98.8742 139.377ZM150.651 82.6504L118.673 114.628L123.623 119.578L155.601 87.6001L150.651 82.6504Z" fill="black"/>
+                <path d="M162.502 75.5021L113 23" stroke="black" stroke-width="19" stroke-linecap="round"/>
+                <path d="M17.1552 76.5332L59.8448 33.8436" stroke="black" stroke-width="19" stroke-linecap="round"/>
+                <path d="M81.1658 13L42.1284 23.46L70.7058 52.0374L81.1658 13ZM29.389 69.7265L61.3668 37.7487L56.4171 32.799L24.4393 64.7768L29.389 69.7265Z" fill="black"/>
+                <path d="M17.5379 76.8748L67.04 129.377" stroke="black" stroke-width="19" stroke-linecap="round"/>
+              </svg>
+              Aremel
+            </h6>
+            <p class="text-muted" style="margin-bottom:0;">© 2021<br/>Fabrizio Capolini</p>
+            <p>&nbsp;</p>
+          </bs-col>
       
-          <div class="col">
-      
-          </div>
-      
-          <div class="col">
-            <h5>Section</h5>
-            <ul class="nav flex-column">
+          <bs-col>
+            <!---<ul class="nav flex-column">
               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
-            </ul>
-          </div>
+            </ul>-->
+          </bs-col>
         </footer>
+      </bs-container>
     </:define>
 </lib>
