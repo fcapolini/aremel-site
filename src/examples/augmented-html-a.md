@@ -4,6 +4,6 @@ Aremel is a modern web framework, based on [Express](https://expressjs.com/) and
 
 As a language, it can be thought of as the opposite of [React's JSX](https://reactjs.org/docs/introducing-jsx.html): rather than adding markup support to a reactive framework, it adds reactivity to HTML itself.
 
-*Logic attributes*, prefixed with `:`, can be used to add values and functions to any tag.
+**Logic attributes**, prefixed with `:`, can be used to add values and functions to any tag.
 
-*Expressions* can reference logic attributes and can be placed anywhere in text and attributes, surrounded by `[[` and `]]`.
+**Expressions** can reference logic attributes and can be placed anywhere in text and attributes, surrounded by `[[` and `]]`.

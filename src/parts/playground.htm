@@ -41,7 +41,7 @@
                         ]]/>
                 
                 <p/>
-                <div :aka="input" class="playground-col-content[[visible && __rt.page.isClient ? ' visible' :'']]"
+                <div :aka="input" class="playground-col-content[[visible && __rt.page.isClient ? ' visible' : '']]"
                         :visible=[[false]]>
                     <ace-editor :aka="editor" :showGutter=[[true]] :showFoldWidgets=[[true]]
                             :on-hasFocus=[[
@@ -57,6 +57,11 @@
                                     }
                                 })
                             ]]/>
+                    <div class="playground-message">
+                        <bs-badge :type="success" :class-visible=[[editor.hasFocus]]>
+                            [[pageCommandKey]]-S to refresh
+                        </bs-badge>
+                    </div>
                 </div>
             </bs-col>
 

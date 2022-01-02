@@ -38,6 +38,7 @@
             flex-direction: column;
         }
         .playground-col-content {
+            position: relative;
             flex: 1;
             padding-left: .7em;
             border-left: 5px solid #ddd;
@@ -51,10 +52,19 @@
             transition: opacity .1s ease-in;
         }
         .playground-message {
+            position: absolute;
+            top: 0;
+            right: 0;
+            opacity: 0;
+        }
+        .playground-message > .badge {
             display: none;
-            font-size: .85em;
-            opacity: .5;
-            margin-left: .5em;
+            opacity: 0;
+        }
+        .playground-message > .badge.visible {
+            display: inline;
+            opacity: 1;
+            transition: opacity .1s ease-in;
         }
         .ace_gutter {
             width: 20px !important;

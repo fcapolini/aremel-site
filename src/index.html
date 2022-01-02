@@ -5,7 +5,7 @@
 		<:import src="parts/playground.htm"/>
 	</head>
 	<body>
-		<site-page :pageIndex=[[0]]>
+		<site-page :pageIndex=[[-1]]>
 			<div style="background: #ddd;border-bottom:0px solid rgba(0,0,0,.05);text-align: center;background-image:url(res/drew-beamer-kUHfMW8awpE-unsplash-flipped.jpg);background-size:cover;">
 			<bs-container :size="md">
 				<bs-row>
@@ -33,7 +33,9 @@
 						<app-vspacer/>
 						<markdown-div style="font-size:140%;margin:0 1.5em;" :text='A groundbreaking
 							[Node.js](https://nodejs.dev)/[Express](http://expressjs.com)
-							web framework that adds *reusability*, *reactivity* and *isomorphism*
+							web framework that adds [reusability](https://github.com/fcapolini/aremel/wiki/reusability.md),
+							[reactivity](https://github.com/fcapolini/aremel/wiki/reactivity.md)
+							and [isomorphism](https://github.com/fcapolini/aremel/wiki/isomorphism.md)
 							to plain HTML.'/>
 						<!---<markdown-div style="font-size:140%;margin:0 1.5em" :text=
 '# Aremel
@@ -42,7 +44,7 @@ no-nonsense modern web development'/>-->
 						<p/>
 						<app-vspacer/>
 						<bs-alert :type="light" style="display:inline-block;line-height:1.5em;margin:0 1.5em;font-size:110%;color:#664;border:0px solid rgba(0,0,0,.15);padding:.66em 1.1em">
-							<span style="font-size:150%;vertical-align:-15%;">👉</span>&nbsp;&nbsp;Aremel is in <a href="https://github.com/fcapolini/aremel">active development</a> and will be published via npm
+							<span style="font-size:150%;vertical-align:-15%;">👉</span>&nbsp;&nbsp;Aremel is in <a href="https://github.com/fcapolini/aremel/wiki/rev-1.0.md">active development</a> and will be published via npm
 						</bs-alert>
 						<app-vspacer/>
 						<br/>
@@ -52,8 +54,8 @@ no-nonsense modern web development'/>-->
 			</div>
 
 			<div :aka="playgroundStart" style="margin-top:1px;margin-bottom:-1px"/>
-			<div style="min-height: 100vh;display:flex;flex-direction:column;">
-				<app-playground style="flex:1"/>
+			<div style="display:flex;flex-direction:column;">
+				<app-playground style="flex:1;min-height: 100vh;display:flex;flex-direction:column;"/>
 				<app-footer/>
 			</div>
 		</site-page>
