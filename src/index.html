@@ -2,13 +2,36 @@
 <html lang="en">
 	<head>
 		<:import src="parts/head.htm"/>
+		<:import src="parts/playground.htm"/>
 	</head>
 	<body>
 		<site-page :pageIndex=[[0]]>
-			<bs-container :size="md" :data=[[examplesData.content]]>
+			<div style="background: #ddd;border-bottom:0px solid rgba(0,0,0,.05);text-align: center;background-image:url(res/drew-beamer-kUHfMW8awpE-unsplash-flipped.jpg);background-size:cover;">
+			<bs-container :size="md">
 				<bs-row>
+					<bs-col>
+						<br/>
+						<br/>
+						<markdown-div style="font-size:140%;margin:0 1.5em" :text='Aremel is a groundbreaking
+							[Node.js](https://nodejs.dev)/[Express](http://expressjs.com)
+							web framework that adds *reusability*, *reactivity* and *isomorphism*
+							to plain HTML.'/>
+						<p/>
+						<br/>
+						<bs-alert :type="light" style="line-height:1.5em;margin:0 1.5em;font-size:110%;color:#664;border:0px solid rgba(0,0,0,.15);padding:.66em 1em">
+							<span style="font-size:150%;vertical-align:-8%;">👉</span>&nbsp;&nbsp;Aremel is in <a href="https://github.com/fcapolini/aremel">active development</a> and will be published via npm
+						</bs-alert>
+						<br/>
+						<p/>
+					</bs-col>
 				</bs-row>
-			</bs-container>	
+			</bs-container>
+			</div>
+
+			<div :aka="playgroundStart" style="height:0"/>
+			<div>
+				<app-playground/>
+			</div>
 		</site-page>
 	</body>
 </html>

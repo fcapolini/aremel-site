@@ -5,9 +5,12 @@
     <:import src="/.kit/bootstrap/extras/markdown-div.htm"/>
   </head>
   <body>
-    <:data-source :aka="mdData" :type="text/plain" :url="/sample.md"/>
     <bs-card>
-      <markdown-div :text=[[mdData.content]]/>
+      <markdown-div :text="**Aremel** is a
+          groundbreaking **Node.js**/**Express**
+					web framework that adds *reactivity*,
+					*modularity* and *isomorphism*
+					to **plain HTML**."/>
     </bs-card>
   </body>
 </html>

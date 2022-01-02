@@ -1,4 +1,5 @@
 <lib>
+    <:import src="footer.htm"/>
     <:define tag="site-page:bs-page" :pageIndex=[[0]]>
         <bs-navbar :dark=[[true]] :size="md" :breakpoint="sm"
                 :brandLink="index"
@@ -17,5 +18,7 @@
                 </svg>
             </a>
         </bs-navbar>
+        <:slot name="default"/>
+        <app-footer/>
     </:define>
 </lib>

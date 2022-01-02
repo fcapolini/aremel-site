@@ -1,0 +1,127 @@
+<lib>
+    <:define tag="app-playground" :data=[[examplesData.content]]>
+        <:data-source :aka="examplesData" :url="/site/data/examples.json"/>
+        <div :class-stickyTop=[[true]] style="background-color:#fff;padding:.5em 0;">
+            <div style="opacity:1;z-index:-1;position:absolute;left:-10px;right:-10px;top:0;bottom:0;box-shadow:0px 5px 5px -7px #000000;"/>
+            <div :aka="row0">
+                <div>
+                    <bs-nav :aka="nav" :mode="pills" :align="center">
+                        <bs-nav-item style="cursor:pointer;":data=[[data.examples]] :text=[[data.name]]
+                            :sourceFile=[[data.file]]
+                            :markdownFile1=[[data.text1]]
+                            :markdownFile2=[[data.text2]]
+                            :event-click=[[() => {
+                                nav.selection = itemIndex;
+                                playgroundStart.__dom.scrollIntoView();
+                                con2.row1.col1.sourceData.file = sourceFile;
+                                con2.row2.col1.markdownData.file = markdownFile1 ? markdownFile1 : '_empty.md';
+                                con2.row2.col2.markdownData.file = markdownFile2 ? markdownFile2 : '_empty.md';
+                            }]]
+                        />
+                    </bs-nav>
+                </div>
+            </div>
+        </div>
+        <bs-container :aka="con2">
+        <bs-row :aka="row1" :class-willfadein=[[true]] :class-fadein1=[[false]]>
+            <p/>
+            <bs-col :aka="col1" :size="sm-8" :class-playgroundCol=[[true]]>
+                <:data-source :aka="sourceData" :type="text/plain" :autoGet=[[false]]
+                        :url="/site/examples/[[file]]"
+                        :file=[[data.examples[0].file]]
+                        :on-file=[[if (file) {input.visible = false; doRequest(null);}]]
+                        :on-content=[[
+                            setTimeout(() => row1.class_fadein1 = true, 100);
+                            input.editor.setValue(content);
+                            setTimeout(() => input.visible = true, 0);
+                            col2.pageData.compile(content);
+                        ]]/>
+                
+                <p/>
+                <div :aka="input" class="playground-col-content[[visible && __rt.page.isClient ? ' visible' :'']]"
+                        :visible=[[false]]>
+                    <ace-editor :aka="editor" :showGutter=[[true]] :showFoldWidgets=[[true]]
+                            :on-hasFocus=[[
+                                col1.header.message.__dom.style.display = (hasFocus ? 'inline' : null);
+                            ]]
+                            :init=[[
+                                addCommand({
+                                    name: 'Save',
+                                    bindKey: {win: 'Ctrl-S',  mac: 'Command-S'},
+                                    exec: function(editor) {
+                                        col2.pageData.content = undefined;
+                                        col2.pageData.compile(getValue());
+                                    }
+                                })
+                            ]]/>
+                </div>
+            </bs-col>
+
+            <bs-col :aka="col2" :size="sm" :class-playgroundCol=[[true]]>
+                <:data-source :aka="pageData" :type="text/plain" :autoGet=[[false]]
+                        :url="/playground-compiler"
+                        :post=[[true]]
+                        :compile=[[(s) => {
+                            output.visible = false;
+                            doRequest({source:s});
+                        }]]
+                        :on-content=[[
+                            if (content) {
+                                var iframe = output.iframe.__dom;
+                                var doc = iframe.contentWindow.document;
+                                doc.open();
+                                doc.write(content);
+                                doc.close();
+                                function f() {
+                                    if (doc) {
+                                        output.visible = true;
+                                        doc.body.style.fontFamily = window.getComputedStyle(document.body).fontFamily;
+                                        doc.body.style.lineHeight = window.getComputedStyle(document.body).lineHeight;
+                                        doc.body.style.margin = 0;
+                                    } else {
+                                        setTimeout(f, 100);
+                                    }
+                                }
+                                setTimeout(f, 100);
+                            }
+                        ]]/>
+                
+                <p/>
+                <div :aka="output" class="playground-col-content[[visible && __rt.page.isClient ? ' visible' :'']]"
+                        :visible=[[false]]>
+                    <iframe :aka="iframe" class="playground-iframe"
+                            sandbox="allow-scripts allow-same-origin"/>
+                </div>
+            </bs-col>
+        </bs-row>
+
+        <br/>
+        <bs-row :aka="row2" :class-willfadein=[[true]] :class-fadein2=[[true]]>
+            <bs-col :aka="col1" :size="sm-6">
+                <p/>
+                <:data-source :aka="markdownData" :type="text/plain" :autoGet=[[true]]
+                        :file=[[data.examples[0].text1]]
+                        :url=[[file ? '/site/examples/'+file : null]]
+                        :on-content=[[
+                            setTimeout(() => row2.class_fadein2 = true, 10);
+                            content != null ? markdown.text = content : null;
+                        ]]
+                />
+                <highlight-div :aka="markdown" :text=""/>
+            </bs-col>
+
+            <bs-col :aka="col2" :size="sm-6">
+                <p/>
+                <:data-source :aka="markdownData" :type="text/plain" :autoGet=[[true]]
+                        :file=[[data.examples[0].text2]]
+                        :url=[[file ? '/site/examples/'+file : null]]
+                        :on-content=[[content != null ? markdown.text = content : null]]
+                />
+                <highlight-div :aka="markdown" :text=""/>
+            </bs-col>
+        </bs-row>
+        <br/>
+        <br/>
+        </bs-container>
+    </:define>
+</lib>
