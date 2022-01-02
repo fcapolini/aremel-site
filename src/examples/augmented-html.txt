@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
-  <body :v=[[2]]>
-    2 + [[v]] = [[2 + v]]
+  <body :v=[[10]]>
+    <button :event-click=[[() => v--]]>-</button>
+    [[v]]
+    <button :event-click=[[() => v++]]>+</button>
   </body>
 </html>

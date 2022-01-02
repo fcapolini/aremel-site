@@ -12,4 +12,4 @@ In delivered pages:
 
 * **Logic attributes** are removed and turned into page-specific code.
 
-* **Expressions** are replaced with their result and, again, are added to page code.
+* **Expressions** are replaced with their result and, again, are added to page code for client-side execution.

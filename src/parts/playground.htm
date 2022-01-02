@@ -25,7 +25,7 @@
         <bs-container :aka="con2">
         <bs-row :aka="row1" :class-willfadein=[[true]] :class-fadein1=[[false]]>
             <p> </p>
-            <p> </p>
+            <br/>
             <bs-col :aka="col1" :size="sm-8" :class-playgroundCol=[[true]]>
                 <:data-source :aka="sourceData" :type="text/plain" :autoGet=[[false]]
                         :url="/site/examples/[[file]]"
@@ -91,15 +91,15 @@
                 <div :aka="output" class="playground-col-content[[visible && __rt.page.isClient ? ' visible' :'']]"
                         :visible=[[false]]>
                     <iframe :aka="iframe" class="playground-iframe"
-                            sandbox="allow-scripts allow-same-origin"/>
+                            sandbox="allow-scripts allow-same-origin allow-top-navigation-by-user-activation"/>
                 </div>
             </bs-col>
         </bs-row>
 
+        <p/>
         <br/>
         <bs-row :aka="row2" :class-willfadein=[[true]] :class-fadein2=[[true]]>
             <bs-col :aka="col1" :size="sm-6">
-                <p/>
                 <:data-source :aka="markdownData" :type="text/plain" :autoGet=[[true]]
                         :file=[[data.examples[0].text1]]
                         :url=[[file ? '/site/examples/'+file : null]]
@@ -112,7 +112,6 @@
             </bs-col>
 
             <bs-col :aka="col2" :size="sm-6">
-                <p/>
                 <:data-source :aka="markdownData" :type="text/plain" :autoGet=[[true]]
                         :file=[[data.examples[0].text2]]
                         :url=[[file ? '/site/examples/'+file : null]]

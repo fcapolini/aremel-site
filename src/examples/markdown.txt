@@ -6,11 +6,10 @@
   </head>
   <body>
     <bs-card>
-      <markdown-div :text="**Aremel** is a
-          groundbreaking **Node.js**/**Express**
-					web framework that adds *reactivity*,
-					*modularity* and *isomorphism*
-					to **plain HTML**."/>
+      <markdown-div :text="Aremel is a groundbreaking
+        [Node.js](https://nodejs.dev)/[Express](http://expressjs.com)
+        web framework that adds *reusability*, *reactivity*
+        and *isomorphism* to plain HTML."/>
     </bs-card>
   </body>
 </html>
