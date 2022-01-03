@@ -4,16 +4,16 @@
         <bs-navbar :dark=[[true]] :size="md" :breakpoint="sm"
                 :brandLink="index"
                 :selection=[[pageIndex]]>
-            <span :slot="brand">
-                <svg style="margin-left:.1em;vertical-align:-20%" width="30" viewBox="0 0 179 151" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M164.055 76.9649L124.985 116.035" stroke="white" stroke-width="19" stroke-linecap="round"/>
-                    <path d="M98.8742 139.377L137.912 128.917L109.334 100.339L98.8742 139.377ZM150.651 82.6504L118.673 114.628L123.623 119.578L155.601 87.6001L150.651 82.6504Z" fill="white"/>
-                    <path d="M162.502 75.5021L113 23" stroke="white" stroke-width="19" stroke-linecap="round"/>
-                    <path d="M17.1552 76.5332L59.8448 33.8436" stroke="white" stroke-width="19" stroke-linecap="round"/>
-                    <path d="M81.1658 13L42.1284 23.46L70.7058 52.0374L81.1658 13ZM29.389 69.7265L61.3668 37.7487L56.4171 32.799L24.4393 64.7768L29.389 69.7265Z" fill="white"/>
-                    <path d="M17.5379 76.8748L67.04 129.377" stroke="white" stroke-width="19" stroke-linecap="round"/>
+            <span :slot="brand" style="display:flex;gap:.35em">
+                <svg _style="margin-left:.1em;vertical-align:0%" width="30" viewBox="0 0 181 117" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.71001 58.37L66.8897 13.6963" stroke="white" stroke-width="19" stroke-linecap="round"/>
+                    <path d="M83.4461 0.760803L43.4249 6.38542L68.3066 38.2325L83.4461 0.760803ZM11.8636 61.1288L60.7786 22.9122L56.4689 17.3961L7.55393 55.6127L11.8636 61.1288Z" fill="white"/>
+                    <path d="M9.71001 58.37L66.5721 102.796" stroke="white" stroke-width="19" stroke-linecap="round"/>
+                    <path d="M170.736 58.4256L113.556 103.099" stroke="white" stroke-width="19" stroke-linecap="round"/>
+                    <path d="M97 116.035L137.021 110.41L112.14 78.5631L97 116.035ZM168.583 55.6668L119.668 93.8834L123.977 99.3994L172.892 61.1828L168.583 55.6668Z" fill="white"/>
+                    <path d="M170.736 58.4256L113.874 14" stroke="white" stroke-width="19" stroke-linecap="round"/>
                 </svg>
-                Aremel
+                <span style="letter-spacing:.02rem;">Aremel</span>
             </span>
 
             <bs-nav-item :text="Features" :link="https://github.com/fcapolini/aremel/wiki"/>
