@@ -6,13 +6,13 @@
 	</head>
 	<body>
 		<site-page :pageIndex=[[-1]]>
-			<div style="background: #ddd;border-bottom:0px solid rgba(0,0,0,.05);text-align: center;background-image:url(res/drew-beamer-kUHfMW8awpE-unsplash-flipped.jpg);background-size:cover;">
+			<div class="app-hero-bg">
 			<bs-container :size="md">
 				<bs-row>
 					<bs-col>
 						<br/>
 						<app-vspacer/>
-						<h1 style="letter-spacing:.02rem;">
+						<h1 class="app-name">
 							<span style="display:flex;place-content: center;gap: 0.2em;">
 							<svg style="margin-left:-.5em;" width="50" viewBox="0 0 181 117" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M9.71001 58.37L66.8897 13.6963" stroke="black" stroke-width="19" stroke-linecap="round"/>
@@ -32,7 +32,7 @@
 						</div>
 						<p/>
 						<app-vspacer/>
-						<bs-alert :type="light" style="display:inline-block;line-height:1.5em;margin:0 1.5em;font-size:110%;color:#664;border:0px solid rgba(0,0,0,.15);padding:.66em 1.1em">
+						<bs-alert :type="light" :class-appHeroAlert=[[true]]>
 							<span style="font-size:150%;vertical-align:-15%;">👉</span>&nbsp;&nbsp;Aremel is in <a href="https://github.com/fcapolini/aremel/wiki/rev-1.0.md">active development</a> and will be published via npm
 						</bs-alert>
 						<app-vspacer/>
