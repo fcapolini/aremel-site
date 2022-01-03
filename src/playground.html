@@ -7,7 +7,7 @@
 	<body>
 		<site-page :pageIndex=[[3]]>
 			<bs-container :size="md" :data=[[examplesData.content]]>
-				<:data-source :aka="examplesData" :url="/site/data/examples.json"/>
+				<:data-source :aka="examplesData" :url="/data/examples.json"/>
 
 				<p/>
 				<bs-row :aka="row1" :class-willfadein=[[true]] :class-fadein1=[[false]]>
@@ -34,7 +34,7 @@
 						</div>
 
 						<:data-source :aka="sourceData" :type="text/plain" :autoGet=[[false]]
-								:url="/site/examples/[[file]]"
+								:url="/examples/[[file]]"
 								:file=[[data.examples[0].file]]
 								:on-file=[[if (file) {input.visible = false; doRequest(null);}]]
 								:on-content=[[
@@ -123,7 +123,7 @@
 						<p/>
 						<:data-source :aka="markdownData" :type="text/plain" :autoGet=[[true]]
 								:file=[[data.examples[0].text1]]
-								:url=[[file ? '/site/examples/'+file : null]]
+								:url=[[file ? '/examples/'+file : null]]
 								:on-content=[[
 									setTimeout(() => row2.class_fadein2 = true, 10);
 									content != null ? markdown.text = content : null;
@@ -136,7 +136,7 @@
 						<p/>
 						<:data-source :aka="markdownData" :type="text/plain" :autoGet=[[true]]
 								:file=[[data.examples[0].text2]]
-								:url=[[file ? '/site/examples/'+file : null]]
+								:url=[[file ? '/examples/'+file : null]]
 								:on-content=[[content != null ? markdown.text = content : null]]
 						/>
 						<highlight-div :aka="markdown" :text=""/>

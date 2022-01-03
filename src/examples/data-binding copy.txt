@@ -5,7 +5,7 @@
   </head>
   <body>
     <:data-source :aka="listData"
-        :url="/site/examples/list.json"/>
+        :url="/examples/list.json"/>
     <bs-page>
       <bs-list>
         <bs-item :data=[[listData.content.list]]>

@@ -1,6 +1,6 @@
 <lib>
     <:define tag="app-playground" :data=[[examplesData.content]]>
-        <:data-source :aka="examplesData" :url="/site/data/examples.json"/>
+        <:data-source :aka="examplesData" :url="/data/examples.json"/>
         <div :class-stickyTop=[[true]] style="background-color:#fff;padding:.5em 0;">
             <div style="z-index:-1;position:absolute;left:0;right:0;top:0;bottom:-10px;overflow:hidden">
                 <div style="position:absolute;left:-10px;right:-10px;top:0;bottom:10px;box-shadow:0px 5px 5px -7px #000000;"/>
@@ -30,7 +30,7 @@
             <br/>
             <bs-col :aka="col1" :size="sm-8" :class-playgroundCol=[[true]]>
                 <:data-source :aka="sourceData" :type="text/plain" :autoGet=[[false]]
-                        :url="/site/examples/[[file]]"
+                        :url="/examples/[[file]]"
                         :file=[[data.examples[0].file]]
                         :on-file=[[if (file) {input.visible = false; doRequest(null);}]]
                         :on-content=[[
@@ -108,7 +108,7 @@
             <bs-col :aka="col1" :size="sm-6">
                 <:data-source :aka="markdownData" :type="text/plain" :autoGet=[[true]]
                         :file=[[data.examples[0].text1]]
-                        :url=[[file ? '/site/examples/'+file : null]]
+                        :url=[[file ? '/examples/'+file : null]]
                         :on-content=[[
                             setTimeout(() => row2.class_fadein2 = true, 10);
                             content != null ? markdown.text = content : null;
@@ -121,7 +121,7 @@
             <bs-col :aka="col2" :size="sm-6">
                 <:data-source :aka="markdownData" :type="text/plain" :autoGet=[[true]]
                         :file=[[data.examples[0].text2]]
-                        :url=[[file ? '/site/examples/'+file : null]]
+                        :url=[[file ? '/examples/'+file : null]]
                         :on-content=[[content != null ? markdown.text = content : null]]
                 />
                 <p/>
