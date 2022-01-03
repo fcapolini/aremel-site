@@ -1,6 +1,6 @@
 #### Bootstrap Kit
 
-This example uses Aremel's Bootstrap Kit.
+This example uses Aremel's [Bootstrap Kit](https://github.com/fcapolini/aremel-bootstrap-kit).
 
 By importing the kit in the `<head>` tag, all needed resources are automatically included.
 
