@@ -1,1 +1,4 @@
 *.html_
+/dist/.aremel
+/dist/.kit/bootstrap
+node_modules
