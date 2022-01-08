@@ -5,7 +5,9 @@ import AremelServer, { ServerProps } from "./server/server";
 new AremelServer({
     port: 3000,
     rootPath: process.cwd(),
+    assumeHttps: true,
     behindProxy: true,
+    useCache: true,
     domainsWhitelist: new Set([
         'aremel.org', 'aremel.org:3000',
         'www.aremel.org', 'www.aremel.org:3000',
@@ -22,7 +24,7 @@ new AremelServer({
         const prepro = new Preprocessor(props.rootPath, [{
             fname: 'index.html',
             content: req.body.source
-        }])
+        }]);
         var base = `http://${req.headers.host}`;
         var url = new URL('index.html', base);
         AremelServer.getPage(prepro, url, (doc) => {
