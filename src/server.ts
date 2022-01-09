@@ -6,13 +6,8 @@ new AremelServer({
     port: 3000,
     rootPath: process.cwd(),
     assumeHttps: true,
-    behindProxy: true,
+    trustProxy: true,
     useCache: true,
-    domainsWhitelist: new Set([
-        'aremel.org', 'aremel.org:3000',
-        'www.aremel.org', 'www.aremel.org:3000',
-        'localhost', 'localhost:3000'
-    ]),
 }, (props:ServerProps, app:Application) => {
     AremelServer.setLimiter({
         windowMs: 10 * 60 * 1000,

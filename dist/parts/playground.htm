@@ -136,10 +136,7 @@
                     <:data-source :aka="markdownData" :type="text/plain" :autoGet=[[true]]
                             :file=[[data.examples[0].text1]]
                             :url=[[file ? '/examples/'+file : null]]
-                            :on-content=[[
-                                setTimeout(() => row2.class_fadein2 = true, 10);
-                                content != null ? markdown.text = content : null;
-                            ]]
+                            :on-content=[[content != null ? markdown.text = content : null]]
                     />
                     <p/>
                     <highlight-div :aka="markdown" :text=""/>
