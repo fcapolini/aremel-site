@@ -38,11 +38,13 @@
                             :markdownFile1=[[data.text1]]
                             :markdownFile2=[[data.text2]]
                             :event-click=[[() => {
-                                nav.selection = itemIndex;
                                 playgroundStart.__dom.scrollIntoView();
-                                con2.row1.col1.sourceData.file = sourceFile;
-                                con2.row2.col1.markdownData.file = markdownFile1 ? markdownFile1 : '_empty.md';
-                                con2.row2.col2.markdownData.file = markdownFile2 ? markdownFile2 : '_empty.md';
+                                if (nav.selection !== itemIndex) {
+                                    nav.selection = itemIndex;
+                                    con2.row1.col1.sourceData.file = sourceFile;
+                                    con2.row2.col1.markdownData.file = markdownFile1 ? markdownFile1 : '_empty.md';
+                                    con2.row2.col2.markdownData.file = markdownFile2 ? markdownFile2 : '_empty.md';
+                                }
                             }]]
                         />
                     </bs-nav>
@@ -108,7 +110,7 @@
                                     doc.write(content);
                                     doc.close();
                                     function f() {
-                                        if (doc) {
+                                        if (doc && doc.body && doc.body.style) {
                                             output.visible = true;
                                             doc.body.style.fontFamily = window.getComputedStyle(document.body).fontFamily;
                                             doc.body.style.lineHeight = window.getComputedStyle(document.body).lineHeight;
