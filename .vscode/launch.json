@@ -11,7 +11,7 @@
 			"skipFiles": [
 				"<node_internals>/**"
 			],
-			"program": "${workspaceFolder}/dist/.aremel/bin/server.js",
+			"program": "${workspaceFolder}/dist/.aremel/bin/testing-aremel-org.js",
 			"cwd": "${workspaceFolder}/dist"
 		}
 	]

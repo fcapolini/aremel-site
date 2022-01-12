@@ -10,7 +10,7 @@
 			<bs-container :size="md">
 				<bs-row>
 					<bs-col>
-						<br/>
+						<div style="font-size:150%"><br/></div>
 						<app-vspacer/>
 						<h1 class="app-name">
 							<span style="display:flex;place-content: center;gap: 0.2em;">
@@ -27,11 +27,11 @@
 						</h1>
 						<app-vspacer/>
 						<div style="display: flex;flex-direction: column;align-items: center;">
-						<markdown-div :class-appSubtitle=[[true]] :text='A groundbreaking
-							web framework that turns HTML into a reactive language.'/>
-						</div>
-						<p/>
-						<app-vspacer/>
+							<markdown-div :class-appSubtitle=[[true]] :text='A groundbreaking
+								web framework that turns HTML into a reactive language.'/>
+							</div>
+							<p/>
+						<div style="font-size:120%"><app-vspacer/></div>
 						<bs-alert :type="light" :class-appHeroAlert=[[true]]>
 							<span style="font-size:150%;vertical-align:-15%;">👉</span>&nbsp;&nbsp;Aremel is in <a href="https://github.com/fcapolini/aremel/wiki/rev-1.0.md">active development</a> and will be published via npm
 						</bs-alert>
