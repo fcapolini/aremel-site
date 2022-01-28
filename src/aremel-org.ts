@@ -1,4 +1,5 @@
 import { Application } from "express";
+import Compiler from "./compiler/compiler";
 import Preprocessor from './compiler/preprocessor';
 import AremelServer, { ServerProps } from "./server/server";
 
@@ -22,9 +23,9 @@ new AremelServer({
         }]);
         var base = `http://${req.headers.host}`;
         var url = new URL('index.html', base);
-        AremelServer.getPage(prepro, url, (doc) => {
+        Compiler.getPage(prepro, url.toString(), (html, _) => {
             res.header("Content-Type",'text/html');
-            res.send(doc.toString());
+            res.send(html);
         }, (err) => {
             res.header("Content-Type",'text/plain');
             res.send(`${err}`);
