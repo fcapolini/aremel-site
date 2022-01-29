@@ -1,0 +1,1 @@
+{"version":"1.0.0","name":"aremel-site","dependencies":{"@babel/core":{"version":"7.16.0"},"express-rate-limit":{"version":"6.0.1"},"express":{"version":"4.17.1"},"highlight.js":{"version":"11.3.1"},"piscina":{"version":"3.2.0"},"showdown":{"version":"1.9.0"}}}
