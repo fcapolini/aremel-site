@@ -9,6 +9,7 @@ new AremelServer({
     assumeHttps: true,
     trustProxy: true,
     useCache: true,
+    domainsWhitelist: new Set(['www.aremel.org', 'aremel.org'])
 }, (props:ServerProps, app:Application) => {
     AremelServer.setLimiter({
         windowMs: 10 * 60 * 1000,

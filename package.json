@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
+    "browserify": "browserify dist/.aremel/bin/client.js -o dist/.aremel/bin/aremel.js",
     "start 3000": "cd dist && node .aremel/bin/aremel-org.js",
-    "start 3001": "cd dist && node .aremel/bin/testing-aremel-org.js"
+    "start 3001": "cd dist && node .aremel/bin/testing-aremel-org.js",
+    "pm2 restart": "pm2 restart aremel-org"
   },
   "repository": {
     "type": "git",
